@@ -6,6 +6,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<script src="https://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -118,14 +120,14 @@ overflow-x:hidden;}
 {
 position:relative;
 width:100%;
-height:25vw;
+height:20vw;
 }
 
 .cardsa
 {
 position:relative;
 width:100%;
-height:50vw;
+height:80vw;
 }
 
 .cards1
@@ -159,15 +161,15 @@ position:absolute;
 top:0%;
 left:3%;
 height:15vw;
-width:32%;
+width:34%;
 }
 .card1a
 {
 position:absolute;
 top:0%;
 left:3%;
-height:20vw;
-width:70%;
+height:27vw;
+width:94.3%;
 }
 .card2
 {
@@ -175,20 +177,20 @@ position:absolute;
 top:0%;
 left:39%;
 height:15vw;
-width:32%;
+width:34%;
 }
 .card2a
 {
 position:absolute;
-top:47%;
+top:40%;
 left:3%;
-height:20vw;
-width:70%;
+height:27vw;
+width:94.3%;
 }
 .card3
 {
 position:absolute;
-top:0%;
+top:3%;
 left:51%;
 height:100%;
 width:100%;
@@ -197,17 +199,17 @@ width:100%;
 {
 position:absolute;
 top:0%;
-left:75.5%;
-height:50%;
-width:22%;
+left:75%;
+height:13vw;
+width:22.5%;
 }
 .card4a
 {
 position:absolute;
-top:30%;
-left:75.5%;
+top:83%;
+left:3%;
 height:20vw;
-width:22%;
+width:94.3%;
 }
 .w3-card-4
 {
@@ -269,19 +271,18 @@ overflow-x:hidden;
     background-size: 100%; 100%;
     height:15vw;
         border-radius:5px;
-    background-attachment:fixed;
 }
 .tint1a{
  background:url("abc.jpg");
     background-size: 100%; 100%;
-    height:20vw;
+    height:27vw;
         border-radius:5px;
     
 }
 .tint1b{
  background:url("Pills.jpg");
     background-size: 100%; 100%;
-    height:20vw;
+    height:27vw;
         border-radius:5px;
     
 }
@@ -316,21 +317,21 @@ border-radius:5px;
 }
 
 .footer{
-  background-color: #E0E0E0;
+  background-color: white;
   color: #757575;
   width: auto;
   height: 60px;
   margin-left: 0px;
 }
 .footer-sm{
-  background-color: #E0E0E0;
+  background-color: white;
   color: #757575;
   width: 102%;
   height: 80px;
   margin-left: 0px;
 }
 .footer-xs{
-  background-color: #E0E0E0;
+  background-color: white;
   color: #757575;
   padding: 0;
   margin: 0;
@@ -363,13 +364,13 @@ label {
   position: relative;
   display: block;
   padding: 0 0 0 1em;
-  background: #16a085;
+  background: #E8E8E8;
   font-weight: bold;
   line-height: 3;
   cursor: pointer;
 }
 .blue label {
-  background: #F5F5F5;
+  background: E8E8E8;
 }
 .tab-content {
   max-height: 0;
@@ -468,9 +469,40 @@ input[type=radio]:checked + label::after {
 .rotate{
   transform: rotate(180deg);
 }
-
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #E8E8E8;
+    margin: 1em 0;
+    padding: 0; 
+}
 </style>
 <script>
+
+var $window           = $(window),
+    win_height_padded = $window.height() * 1.1,
+    isTouch           = Modernizr.touch;
+
+$window.on('scroll', revealOnScroll);
+
+function revealOnScroll() {
+  var scrolled = $window.scrollTop();
+  $(".revealOnScroll:not(.animated)").each(function () {
+    var $this     = $(this),
+        offsetTop = $this.offset().top;
+
+    if (scrolled + win_height_padded > offsetTop) {
+      if ($this.data('timeout')) {
+        window.setTimeout(function(){
+          $this.addClass('animated ' + $this.data('animation'));
+        }, parseInt($this.data('timeout'),10));
+      } else {
+        $this.addClass('animated ' + $this.data('animation'));
+      }
+    }
+  });
+}
 
 function function1(){
   document.getElementById("tab-one").setAttribute("type","radio");
@@ -563,8 +595,14 @@ function function4(){
   </div>
 </nav>
 </div>
+<div>
 
-<div class="all-cards hidden-sm hidden-md hidden-xs">
+<div class="all-cards hidden-sm hidden-xs">
+<div style="width:100%;height:2.6vw;">
+</div>
+<h1 style="text-align:center;color:#00bfbc;font-family:AR ESSENCE;font-size:40px;">BLOG POSTS</h1>
+<hr/>
+<div style="text-align:center;color:white;background-color:#00bfbc;padding:0.9%;font-family:Arial;width:300px;border-radius:0 3px 3px 0;">10<sup>th</sup> July</div>
 <div style="width:100%;height:4vw;">
 </div>
 <div class="cards">
@@ -572,8 +610,8 @@ function function4(){
 <div class="w3-card-4">
 <div class="tint1">
 <div class = "tint">
-<span class = "whitecontent" style="margin-top:6%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7vw;">Vegetables Increasing Resistance To Antibiotics</span>
-<p class="whitecontent"style="margin-top:34%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.1vw;">10th June, 2017</p>
+<span class = "whitecontent" style="margin-top:3%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7vw;">Vegetables Increasing Resistance To Antibiotics</span>
+<p class="whitecontent"style="margin-top:34%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.1vw;">10<sup>th</sup> June, 2017</p>
 <p class="whitecontent"style="margin-top:39%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3vw;">Author: Admin</p>
 </div>
 </div>
@@ -584,8 +622,8 @@ function function4(){
 <div class="w3-card-4">
 <div class="tint2">
 <div class = "tint3">
-<span class = "whitecontent" style="margin-top:6%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7vw;">Are Antibiotics Good For You?</span>
-<p class="whitecontent"style="margin-top:34%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.1vw;">10th June, 2017</p>
+<span class = "whitecontent" style="margin-top:3%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7vw;">Are Antibiotics Good For You?</span>
+<p class="whitecontent"style="margin-top:34%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.1vw;">10<sup>th</sup> June, 2017</p>
 <p class="whitecontent"style="margin-top:39%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3vw;">Author: Admin</p>
 </div>
 </div>
@@ -602,8 +640,8 @@ function function4(){
 <div class="w3-card-4">
 <div class="tint1">
 <div class = "tint">
-<span class = "whitecontent" style="margin-top:6%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7vw;">Vegetables Increasing Resistance To Antibiotics</span>
-<p class="whitecontent"style="margin-top:34%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.1vw;">10th June, 2017</p>
+<span class = "whitecontent" style="margin-top:3%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7vw;">Vegetables Increasing Resistance To Antibiotics</span>
+<p class="whitecontent"style="margin-top:34%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.1vw;">10<sup>th</sup> June, 2017</p>
 <p class="whitecontent"style="margin-top:39%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3vw;">Author: Admin</p>
 </div>
 </div>
@@ -614,8 +652,8 @@ function function4(){
 <div class="w3-card-4">
 <div class="tint2">
 <div class = "tint3">
-<span class = "whitecontent" style="margin-top:6%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7vw;">Are Antibiotics Good For You?</span>
-<p class="whitecontent"style="margin-top:34%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.1vw;">10th June, 2017</p>
+<span class = "whitecontent" style="margin-top:3%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7vw;">Are Antibiotics Good For You?</span>
+<p class="whitecontent"style="margin-top:34%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.1vw;">10<sup>th</sup> June, 2017</p>
 <p class="whitecontent"style="margin-top:39%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3vw;">Author: Admin</p>
 </div>
 </div>
@@ -632,8 +670,8 @@ function function4(){
 <div class="w3-card-4">
 <div class="tint1">
 <div class = "tint">
-<span class = "whitecontent" style="margin-top:6%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7vw;">Vegetables Increasing Resistance To Antibiotics</span>
-<p class="whitecontent"style="margin-top:34%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.1vw;">10th June, 2017</p>
+<span class = "whitecontent" style="margin-top:3%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7vw;">Vegetables Increasing Resistance To Antibiotics</span>
+<p class="whitecontent"style="margin-top:34%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.1vw;">10<sup>th</sup> June, 2017</p>
 <p class="whitecontent"style="margin-top:39%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3vw;">Author: Admin</p>
 </div>
 </div>
@@ -644,8 +682,8 @@ function function4(){
 <div class="w3-card-4">
 <div class="tint2">
 <div class = "tint3">
-<span class = "whitecontent" style="margin-top:6%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7vw;">Are Antibiotics Good For You?</span>
-<p class="whitecontent"style="margin-top:34%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.1vw;">10th June, 2017</p>
+<span class = "whitecontent" style="margin-top:3%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7vw;">Are Antibiotics Good For You?</span>
+<p class="whitecontent"style="margin-top:34%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.1vw;">10<sup>th</sup> June, 2017</p>
 <p class="whitecontent"style="margin-top:39%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3vw;">Author: Admin</p>
 </div>
 </div>
@@ -663,7 +701,13 @@ function function4(){
 
 
 <div class="hello hidden-lg hidden-md">
-<div style="width:100%;height:4vw;">
+<div style="width:100%;height:4.6vw;">
+</div>
+
+<h2 style="text-align:center;color:red;font-family:AR ESSENCE;font-size:40px;">BLOG POSTS</h2>
+<hr/>
+<div style="text-align:center;color:white;background-color:red;padding:0.9%;font-family:Arial;width:200px;">10<sup>th</sup> July</div>
+<div style="width:100%;height:8vw;">
 </div>
 <div class="all-cards" style="">
 <div class="cardsa">
@@ -671,9 +715,9 @@ function function4(){
 <div class="w3-card-4">
 <div class="tint1a">
 <div class = "tint">
-<span class = "whitecontent" style="margin-top:0%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.9em;line-height:130%;">Vegetables Increasing Resistance To Antibiotics</span>
-<p class="whitecontent"style="margin-top:19%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.6em;">10th June, 2017</p>
-<p class="whitecontent"style="margin-top:23%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.7em;">Author: Admin</p>
+<span class = "whitecontent" style="margin-top:1%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.9em;">Vegetables Increasing Resistance To Antibiotics</span>
+<p class="whitecontent"style="margin-top:20%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.7em;">10<sup>th</sup> June, 2017</p>
+<p class="whitecontent"style="margin-top:24%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.8em;">Author: Admin</p>
 </div>
 </div>
 </div>
@@ -683,9 +727,9 @@ function function4(){
 <div class="w3-card-4">
 <div class="tint1b">
 <div class = "tint3">
-<span class = "whitecontent" style="margin-top:0%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.9em;line-height:130%;">Are Antibiotics Good For You?</span>
-<p class="whitecontent"style="margin-top:19%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.6em;">10th June, 2017</p>
-<p class="whitecontent"style="margin-top:23%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.7em;">Author: Admin</p>
+<span class = "whitecontent" style="margin-top:1%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.9em;">Are Antibiotics Good For You?</span>
+<p class="whitecontent"style="margin-top:20%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.6em;">10<sup>th</sup> June, 2017</p>
+<p class="whitecontent"style="margin-top:24%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.7em;">Author: Admin</p>
 </div>
 </div>
 </div>
@@ -695,16 +739,16 @@ function function4(){
 <div class="w3-card-4"><img class="advertisement" src="abc1.jpg" width="100%" height="100%"></div>
 </div>
 </div>
-
+<div style="height:14vw;"></div>
 
 <div class="cardsa">
 <div class="card1a">
 <div class="w3-card-4">
 <div class="tint1a">
 <div class = "tint">
-<span class = "whitecontent" style="margin-top:0%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.9em;line-height:130%;">Vegetables Increasing Resistance To Antibiotics</span>
-<p class="whitecontent"style="margin-top:19%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.6em;">10th June, 2017</p>
-<p class="whitecontent"style="margin-top:23%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.7em;">Author: Admin</p>
+<span class = "whitecontent" style="margin-top:1%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.9em;">Vegetables Increasing Resistance To Antibiotics</span>
+<p class="whitecontent"style="margin-top:20%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.6em;">10<sup>th</sup> June, 2017</p>
+<p class="whitecontent"style="margin-top:24%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.7em;">Author: Admin</p>
 </div>
 </div>
 </div>
@@ -714,9 +758,9 @@ function function4(){
 <div class="w3-card-4">
 <div class="tint1b">
 <div class = "tint3">
-<span class = "whitecontent" style="margin-top:0%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.9em;line-height:130%;">Are Antibiotics Good For You?</span>
-<p class="whitecontent"style="margin-top:19%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.6em;">10th June, 2017</p>
-<p class="whitecontent"style="margin-top:23%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.7em;">Author: Admin</p>
+<span class = "whitecontent" style="margin-top:1%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.9em;">Are Antibiotics Good For You?</span>
+<p class="whitecontent"style="margin-top:20%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.6em;">10<sup>th</sup> June, 2017</p>
+<p class="whitecontent"style="margin-top:24%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.7em;">Author: Admin</p>
 </div>
 </div>
 </div>
@@ -727,13 +771,52 @@ function function4(){
 
 
 </div>
+<div style="height:14vw;"></div>
+
+<div class="cardsa">
+<div class="card1a">
+<div class="w3-card-4">
+<div class="tint1a">
+<div class = "tint">
+<span class = "whitecontent" style="margin-top:1%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.9em;">Vegetables Increasing Resistance To Antibiotics</span>
+<p class="whitecontent"style="margin-top:20%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.6em;">10<sup>th</sup> June, 2017</p>
+<p class="whitecontent"style="margin-top:24%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.7em;">Author: Admin</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card2a">
+<div class="w3-card-4">
+<div class="tint1b">
+<div class = "tint3">
+<span class = "whitecontent" style="margin-top:1%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.9em;">Are Antibiotics Good For You?</span>
+<p class="whitecontent"style="margin-top:20%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.6em;">10<sup>th</sup> June, 2017</p>
+<p class="whitecontent"style="margin-top:24%;margin-left:1%;position:absolute;font-family: Arial;font-size:0.7em;">Author: Admin</p>
+</div>
+</div>
+</div>
+</div>
+<div class="card4a">
+<div class="w3-card-4"><img class="advertisement" src="abc1.jpg" width="100%" height="100%"></div>
+</div>
+
+
+</div>
+<div style="height:14vw;"></div>
 
 </div>
 </div>
 
 
-<div class="hello hidden-lg hidden-sm hidden-xs">
-<div style="width:100%;height:4vw;">
+<div class="hello hidden-lg hidden-sm hidden-xs hidden-md ">
+<div style="width:100%;height:4.6vw;">
+</div>
+
+<h2 style="text-align:center;color:red;font-family:AR ESSENCE;font-size:40px;">BLOG POSTS</h2>
+<hr/>
+<div style="text-align:center;color:white;background-color:red;padding:0.9%;font-family:Arial;width:350px;">10<sup>th</sup> July</div>
+<div style="width:100%;height:8vw;">
 </div>
 <div class="all-cards" style="">
 <div class="cardsa">
@@ -741,9 +824,9 @@ function function4(){
 <div class="w3-card-4">
 <div class="tint1a">
 <div class = "tint">
-<span class = "whitecontent" style="margin-top:3%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7em;line-height:130%;">Vegetables Increasing Resistance To Antibiotics</span>
-<p class="whitecontent"style="margin-top:20%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3em;">10th June, 2017</p>
-<p class="whitecontent"style="margin-top:24%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.4em;">Author: Admin</p>
+<span class = "whitecontent" style="margin-top:1%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7em;line-height:130%;">Vegetables Increasing Resistance To Antibiotics</span>
+<p class="whitecontent"style="margin-top:21.6%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3em;">10<sup>th</sup> June, 2017</p>
+<p class="whitecontent"style="margin-top:25%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.4em;">Author: Admin</p>
 </div>
 </div>
 </div>
@@ -753,9 +836,9 @@ function function4(){
 <div class="w3-card-4">
 <div class="tint1b">
 <div class = "tint3">
-<span class = "whitecontent" style="margin-top:3%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7em;line-height:130%;">Are Antibiotics Good For You?</span>
-<p class="whitecontent"style="margin-top:20%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3em;">10th June, 2017</p>
-<p class="whitecontent"style="margin-top:24%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.4em;">Author: Admin</p>
+<span class = "whitecontent" style="margin-top:1%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7em;line-height:130%;">Are Antibiotics Good For You?</span>
+<p class="whitecontent"style="margin-top:21.6%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3em;">10<sup>th</sup> June, 2017</p>
+<p class="whitecontent"style="margin-top:25%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.4em;">Author: Admin</p>
 </div>
 </div>
 </div>
@@ -765,16 +848,16 @@ function function4(){
 <div class="w3-card-4"><img class="advertisement" src="abc1.jpg" width="100%" height="100%"></div>
 </div>
 </div>
-
+<div style="height:14vw;"></div>
 
 <div class="cardsa">
 <div class="card1a">
 <div class="w3-card-4">
 <div class="tint1a">
 <div class = "tint">
-<span class = "whitecontent" style="margin-top:3%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7em;line-height:130%;">Vegetables Increasing Resistance To Antibiotics</span>
-<p class="whitecontent"style="margin-top:20%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3em;">10th June, 2017</p>
-<p class="whitecontent"style="margin-top:24%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.4em;">Author: Admin</p>
+<span class = "whitecontent" style="margin-top:1%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7em;line-height:130%;">Vegetables Increasing Resistance To Antibiotics</span>
+<p class="whitecontent"style="margin-top:21.6%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3em;">10<sup>th</sup> June, 2017</p>
+<p class="whitecontent"style="margin-top:25%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.4em;">Author: Admin</p>
 </div>
 </div>
 </div>
@@ -784,9 +867,9 @@ function function4(){
 <div class="w3-card-4">
 <div class="tint1b">
 <div class = "tint3">
-<span class = "whitecontent" style="margin-top:3%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7em;line-height:130%;">Are Antibiotics Good For You?</span>
-<p class="whitecontent"style="margin-top:20%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3em;">10th June, 2017</p>
-<p class="whitecontent"style="margin-top:24%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.4em;">Author: Admin</p>
+<span class = "whitecontent" style="margin-top:1%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7em;line-height:130%;">Are Antibiotics Good For You?</span>
+<p class="whitecontent"style="margin-top:21.6%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3em;">10<sup>th</sup> June, 2017</p>
+<p class="whitecontent"style="margin-top:25%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.4em;">Author: Admin</p>
 </div>
 </div>
 </div>
@@ -794,9 +877,38 @@ function function4(){
 <div class="card4a">
 <div class="w3-card-4"><img class="advertisement" src="abc1.jpg" width="100%" height="100%"></div>
 </div>
-
-
 </div>
+<div style="height:14vw;"></div>
+<div class="cardsa">
+<div class="card1a">
+<div class="w3-card-4">
+<div class="tint1a">
+<div class = "tint">
+<span class = "whitecontent" style="margin-top:1%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7em;line-height:130%;">Vegetables Increasing Resistance To Antibiotics</span>
+<p class="whitecontent"style="margin-top:21.6%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3em;">10<sup>th</sup> June, 2017</p>
+<p class="whitecontent"style="margin-top:25%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.4em;">Author: Admin</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card2a">
+<div class="w3-card-4">
+<div class="tint1b">
+<div class = "tint3">
+<span class = "whitecontent" style="margin-top:1%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.7em;line-height:130%;">Are Antibiotics Good For You?</span>
+<p class="whitecontent"style="margin-top:21.6%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.3em;">10<sup>th</sup> June, 2017</p>
+<p class="whitecontent"style="margin-top:25%;margin-left:1%;position:absolute;font-family: Arial;font-size:1.4em;">Author: Admin</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="card4a">
+<div class="w3-card-4"><img class="advertisement" src="abc1.jpg" width="100%" height="100%"></div>
+</div>
+</div>
+<div style="height:14vw;"></div>
 
 </div>
 </div>
@@ -805,7 +917,7 @@ function function4(){
 <div style="position:relative;">
    <!--footer for large and md and sm-->
     <div class="" style="">
-      <div class="row hidden-xs" style="background-color:#F5F5F5">
+      <div class="row hidden-xs" style="background-color:#E8E8E8">
         <div class="col-sm-2" style="padding: 4% 0% 4% 6%">
           <div class="">
             <img src="list.svg" alt="" style="height: auto; width: 90%">
