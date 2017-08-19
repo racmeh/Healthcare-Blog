@@ -267,6 +267,31 @@ input[type=radio]:checked + label::after {
 </style>
 <script>
 
+   var $window           = $(window),
+    win_height_padded = $window.height() * 1.1,
+    isTouch           = Modernizr.touch;
+
+$window.on('scroll', revealOnScroll);
+
+function revealOnScroll() {
+  var scrolled = $window.scrollTop();
+  $(".revealOnScroll:not(.animated)").each(function () {
+    var $this     = $(this),
+        offsetTop = $this.offset().top;
+
+    if (scrolled + win_height_padded > offsetTop) {
+      if ($this.data('timeout')) {
+        window.setTimeout(function(){
+          $this.addClass('animated ' + $this.data('animation'));
+        }, parseInt($this.data('timeout'),10));
+      } else {
+        $this.addClass('animated ' + $this.data('animation'));
+      }
+    }
+  });
+}
+
+   
 function function1(){
   document.getElementById("tab-one").setAttribute("type","radio");
   document.getElementById("tab-two").setAttribute("type","radio");
@@ -365,7 +390,7 @@ function function4(){
 <div style="position:absolute;top:5vw;">
 
 
-<div style="width:72vw;position:absolute;top:5em;background-color:#F4F4F4;left:13vw;font-family:Arial;">
+<div style="width:72vw;position:absolute;top:5em;background-color:#F4F4F4;left:13vw;">
 <div>
 <center><img class="text-center" src="man.jpg" alt="Image" style="border-radius:50%;position:relative;height:100px;width:100px;border:3px solid white;"></center>
 <br/>
@@ -381,7 +406,7 @@ function function4(){
 <br/><br/>
 <i><p style="font-family:Arial;color:grey;padding-left:1%;padding-right:1%;">21st June, 2017</p></i>
 <br/>
-<p style="text-align:justify;padding-left:1%;padding-right:1%;">There are good guidelines and high-level principles that are universal, but you alone can define and refine what works for you.
+<p style="text-align:justify;padding-left:1%;padding-right:1%;font-family:Arial;">There are good guidelines and high-level principles that are universal, but you alone can define and refine what works for you.
 When your system makes you feel comfortable and confident that your productivity bases are covered, and it has a track record of actually helping you do your work without missing anything important, stick to it.<br/><br/>
 If you try a system and it doesn't work for you, it doesn't mean the system is broken. It just doesn't fit you. Move on. Try something else. Focus on the results, not the system.<br/><br/></p>
 <a><img style="width:72vw;font-family:Arial;height:15vw;" src="abc1.jpg" alt="Image"></a>
